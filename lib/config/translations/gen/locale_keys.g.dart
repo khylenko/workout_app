@@ -1,0 +1,65 @@
+// DO NOT EDIT. This is code generated via package:easy_localization/generate.dart
+
+abstract class  LocaleKeys {
+  static const app_locale = 'app_locale';
+  static const app_name = 'app_name';
+  static const app_settings = 'app_settings';
+  static const description = 'description';
+  static const sets = 'sets';
+  static const reps = 'reps';
+  static const statistics = 'statistics';
+  static const exersizes = 'exersizes';
+  static const home_page_no_ex_title = 'home_page_no_ex_title';
+  static const home_page_no_ex_hint = 'home_page_no_ex_hint';
+  static const home_page_no_ex_import = 'home_page_no_ex_import';
+  static const create_exersize_page_title = 'create_exersize_page_title';
+  static const create_exersize_page_inputs_title = 'create_exersize_page_inputs_title';
+  static const create_exersize_page_inputs_description = 'create_exersize_page_inputs_description';
+  static const create_exersize_page_inputs_image = 'create_exersize_page_inputs_image';
+  static const create_exersize_page_inputs_video = 'create_exersize_page_inputs_video';
+  static const create_exersize_page_inputs_sets_relax_time = 'create_exersize_page_inputs_sets_relax_time';
+  static const create_exersize_page_inputs_reps_relax_time = 'create_exersize_page_inputs_reps_relax_time';
+  static const create_exersize_page_inputs_exersize_relax_time = 'create_exersize_page_inputs_exersize_relax_time';
+  static const save_exersize_bottomsheet_save_option = 'save_exersize_bottomsheet_save_option';
+  static const save_exersize_bottomsheet_exit_option = 'save_exersize_bottomsheet_exit_option';
+  static const workout_page_start = 'workout_page_start';
+  static const workout_page_card_reps_done = 'workout_page_card_reps_done';
+  static const workout_page_card_current_set = 'workout_page_card_current_set';
+  static const workout_page_card_end_set = 'workout_page_card_end_set';
+  static const workout_page_end_exersize = 'workout_page_end_exersize';
+  static const rest_bottomsheet_title = 'rest_bottomsheet_title';
+  static const rest_bottomsheet_button = 'rest_bottomsheet_button';
+  static const rest_bottomsheet_button_hide = 'rest_bottomsheet_button_hide';
+  static const delete_exersize_bottomsheet_title = 'delete_exersize_bottomsheet_title';
+  static const delete_exersize_bottomsheet_description = 'delete_exersize_bottomsheet_description';
+  static const delete_exersize_bottomsheet_delete_option = 'delete_exersize_bottomsheet_delete_option';
+  static const delete_exersize_bottomsheet_exit_option = 'delete_exersize_bottomsheet_exit_option';
+  static const rest_timer_notification_title = 'rest_timer_notification_title';
+  static const rest_timer_notification_button = 'rest_timer_notification_button';
+  static const back_to_work_notification_title = 'back_to_work_notification_title';
+  static const import_page_title = 'import_page_title';
+  static const import_page_tab_current_data_created = 'import_page_tab_current_data_created';
+  static const export_bottomsheet_title = 'export_bottomsheet_title';
+  static const export_bottomsheet_description_1 = 'export_bottomsheet_description_1';
+  static const export_bottomsheet_description_2 = 'export_bottomsheet_description_2';
+  static const export_bottomsheet_description_3 = 'export_bottomsheet_description_3';
+  static const export_bottomsheet_description_4 = 'export_bottomsheet_description_4';
+  static const export_bottomsheet_description_5 = 'export_bottomsheet_description_5';
+  static const export_bottomsheet_button_ok = 'export_bottomsheet_button_ok';
+  static const export_bottomsheet_button_cancel = 'export_bottomsheet_button_cancel';
+  static const error_bottomsheet_title = 'error_bottomsheet_title';
+  static const error_bottomsheet_button = 'error_bottomsheet_button';
+  static const import_bottomsheet_title = 'import_bottomsheet_title';
+  static const import_bottomsheet_description_1 = 'import_bottomsheet_description_1';
+  static const import_bottomsheet_description_2 = 'import_bottomsheet_description_2';
+  static const import_bottomsheet_description_3 = 'import_bottomsheet_description_3';
+  static const import_bottomsheet_description_4 = 'import_bottomsheet_description_4';
+  static const import_bottomsheet_description_5 = 'import_bottomsheet_description_5';
+  static const import_bottomsheet_button_ok = 'import_bottomsheet_button_ok';
+  static const import_bottomsheet_button_cancel = 'import_bottomsheet_button_cancel';
+  static const ex_increase_bottomsheet_title = 'ex_increase_bottomsheet_title';
+  static const ex_increase_bottomsheet_description = 'ex_increase_bottomsheet_description';
+  static const ex_increase_bottomsheet_button_ok = 'ex_increase_bottomsheet_button_ok';
+  static const ex_increase_bottomsheet_button_cancel = 'ex_increase_bottomsheet_button_cancel';
+
+}

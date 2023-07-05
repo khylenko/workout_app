@@ -1,0 +1,62 @@
+version: "3"
+
+tasks:
+  gen:
+    desc: Generate localization files, freezed files, and other generated code
+    cmds:
+      - task gen-localization
+      - dart run build_runner build --delete-conflicting-outputs
+
+  gen-localization:
+    desc: Generate localization files
+    cmds:
+      - dart run easy_localization:generate --source-dir lib/config/translations -O lib/config/translations/gen
+      - dart run easy_localization:generate -f keys --source-dir lib/config/translations -O lib/config/translations/gen -o locale_keys.g.dart
+  
+  gen-prod-build-and-install:
+    desc: Generate prod build and install on device
+    cmds:
+      - task gen
+      - fvm flutter clean
+      - fvm flutter pub get
+      - fvm flutter build apk --release --no-tree-shake-icons
+      - fvm flutter install
+      
+
+  # release-dev-ios:
+  #   desc: Build and release iOS app (dev environment)
+  #   dir: ios
+  #   cmds:
+  #     - bundle exec fastlane dev
+
+  # release-dev-android:
+  #   desc: Build and release Android app (dev environment)
+  #   dir: android
+  #   cmds:
+  #     - bundle exec fastlane dev
+
+  # release-dev:
+  #   desc: Build and release iOS and Android apps (dev environment)
+  #   cmds:
+  #     - task: release-dev-ios
+  #     - task: release-dev-android
+
+  # release-prod-ios:
+  #   desc: Build and release iOS app (prod environment)
+  #   dir: ios
+  #   cmds:
+  #     - bundle exec fastlane prod
+
+  # release-prod-android:
+  #   desc: Build and release Android app (prod environment)
+  #   dir: android
+  #   cmds:
+  #     - bundle exec fastlane prod
+
+  # release-prod:
+  #   desc: Build and release iOS and Android apps (prod environment)
+  #   cmds:
+  #     - task: release-prod-ios
+  #     - task: release-prod-android
+
+  # TODO: Add release-ios-prod and release-android-prod tasks

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- primary -->
+    <color name="transparent">#00000000</color>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="c_0021FF">#0021FF</color>
+    <color name="c_F3F5F7">#F3F5F7</color>
+    <color name="c_1D1D1B">#1D1D1B</color>
+    <color name="c_321D7A">#321D7A</color>
+    <color name="c_9373BF">#9373BF</color>
+    <color name="c_F3C1CB">#F3C1CB</color>
+    <color name="c_F2A517">#F2A517</color>
+    <color name="c_DB4B19">#DB4B19</color>
+    <color name="c_45CF79">#45CF79</color>
+    <!-- secondary -->
+    <color name="c_7587FF">#7587FF</color>
+    <color name="c_F6F6F6">#F6F6F6</color>
+    <color name="c_6F1A87">#6F1A87</color>
+    <color name="c_D86600">#D86600</color>
+    <color name="c_05A66C">#05A66C</color>
+    <color name="c_A6164D">#A6164D</color>
+    <color name="c_BD7CBF">#BD7CBF</color>
+    <!-- tertiary -->
+    <color name="c_DDE2E5">#DDE2E5</color>
+    <color name="c_9AA7B3">#9AA7B3</color>
+    <color name="c_0021FF">#0021FF</color>
+    <color name="c_F2F4FF">#F2F4FF</color>
+    <color name="c_C33C54">#C33C54</color>
+    <color name="c_0D3F5E">#0D3F5E</color>
+    <color name="c_30C06D">#30C06D</color>
+    <color name="c_696968">#696968</color>
+    <color name="c_F1F1F1">#F1F1F1</color>
+    <color name="c_F9BB4B">#F9BB4B</color>
+    <color name="c_4D33AA">#4D33AA</color>
+    <color name="c_B191DC">#B191DC</color>
+    <color name="c_36C290">#36C290</color>
+    <color name="c_ED6D46">#ED6D46</color>
+    <color name="c_964AAB">#964AAB</color>
+    <color name="c_CF9ED0">#CF9ED0</color>
+    <color name="c_BC6083">#BC6083</color>
+</resources>

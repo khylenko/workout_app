@@ -1,0 +1,22 @@
+{
+	"dart.flutterSdkPath": ".fvm/flutter_sdk",
+	"editor.codeActionsOnSave": {
+		"source.fixAll": true,
+		"source.organizeImports": true
+	},
+	"editor.formatOnSave": true,
+	"files.watcherExclude": {
+		"**/.fvm": true
+	},
+	"search.exclude": {
+		"**/.fvm": true
+	},
+	"dart.showTodos": false,
+	"explorer.fileNesting.enabled": true,
+	"explorer.fileNesting.expand": false,
+	"explorer.fileNesting.patterns": {
+		"pubspec.yaml": "pubspec.lock,pubspec_overrides.yaml,.packages,.flutter-plugins,.flutter-plugins-dependencies,.metadata",
+		"*.dart": "${capture}.*.dart",
+		"*_bloc.dart": "${capture}_event.dart,${capture}_state.dart"
+	}
+}
