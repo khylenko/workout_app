@@ -97,7 +97,7 @@ class Exersize with _$Exersize {
     return copyWith(updatedAt: DateTime.now().millisecondsSinceEpoch);
   }
 
-  bool get canIcreaseSetsOrReps {
+  bool get canIncreaseSetsOrReps {
     final logs = progressLog.reversed.take(3);
     if (logs.length == 3) {
       return logs
@@ -105,7 +105,7 @@ class Exersize with _$Exersize {
               .expand((i) => i)
               .map((e) => e.completedReps)
               .average >=
-          (reps * sets);
+          reps;
     } else {
       return false;
     }

@@ -52,7 +52,7 @@ class WorkoutPage extends StatelessWidget {
         listener: (ctx, state) {
           state.maybeWhen(
             successWorkoutNotStarted: (exersize) {
-              if (exersize.canIcreaseSetsOrReps) {
+              if (exersize.canIncreaseSetsOrReps) {
                 BottomSheetManager.showIncreaseSetsOrRepsBottomSheet(
                   context: context,
                   exersize: exersize,
