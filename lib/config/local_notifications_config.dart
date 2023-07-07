@@ -5,8 +5,12 @@ import 'package:personal_workout_app/config/translations/gen/locale_keys.g.dart'
 import 'package:personal_workout_app/generated_assets/colors.gen.dart';
 import 'package:personal_workout_app/shared/bottom_sheet/bottom_sheet_manager.dart';
 import 'package:personal_workout_app/shared/extensions/int_extension.dart';
+import 'package:sound_mode/permission_handler.dart';
+import 'package:sound_mode/sound_mode.dart';
+import 'package:sound_mode/utils/ringer_mode_statuses.dart';
 
 int _id = 0;
+RingerModeStatus _initialRingerModeStatus = RingerModeStatus.unknown;
 late BuildContext? _context;
 
 class NotificationService {
@@ -44,10 +48,38 @@ class NotificationService {
       initializationSettings,
       onDidReceiveNotificationResponse: _selectNotification,
     );
+    await _getSoundPermisson();
+    await _checkDeviceSoundMode();
+    await _enableDeviceSound();
   }
 
   void setContext(BuildContext context) {
     _context = context;
+  }
+
+  Future<void> _getSoundPermisson() async {
+    if (!(await PermissionHandler.permissionsGranted ?? false)) {
+      await PermissionHandler.openDoNotDisturbSetting();
+    }
+  }
+
+  Future<void> _checkDeviceSoundMode() async {
+    _initialRingerModeStatus = await SoundMode.ringerModeStatus;
+  }
+
+  Future<void> _enableDeviceSound() async {
+    if (await PermissionHandler.permissionsGranted ?? false) {
+      if (_initialRingerModeStatus == RingerModeStatus.silent ||
+          _initialRingerModeStatus == RingerModeStatus.vibrate) {
+        await SoundMode.setSoundMode(RingerModeStatus.normal);
+      }
+    }
+  }
+
+  Future<void> restoreDeviceSoundMode() async {
+    if (await PermissionHandler.permissionsGranted ?? false) {
+      await SoundMode.setSoundMode(_initialRingerModeStatus);
+    }
   }
 
   Future<void> _selectNotification(

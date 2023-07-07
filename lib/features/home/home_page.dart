@@ -132,7 +132,7 @@ class _HomePageState extends State<HomePage> {
                 }
                 return ReorderableListView.builder(
                   buildDefaultDragHandles: false,
-                  proxyDecorator: proxyDecorator,
+                  proxyDecorator: _proxyDecorator,
                   padding: const EdgeInsets.all(
                     16,
                   ),
@@ -155,7 +155,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Widget proxyDecorator(
+  Widget _proxyDecorator(
     Widget child,
     int index,
     Animation<double> animation,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:personal_workout_app/config/local_notifications_config.dart';
 import 'package:personal_workout_app/features/create_or_update_exersize/bloc/exersize_crud_bloc.dart';
 import 'package:personal_workout_app/features/home/bloc/load_data_bloc.dart';
 import 'package:personal_workout_app/features/statistics/bloc/load_statistics_bloc.dart';
@@ -70,6 +71,11 @@ class WorkoutPage extends StatelessWidget {
                   duration: exersize.exersizeRelaxTime,
                   timePassed: 0,
                   needHideButton: true,
+                );
+              } else {
+                NotificationService().restoreDeviceSoundMode();
+                BottomSheetManager.showExportDataBottomSheet(
+                  context: context,
                 );
               }
             },
