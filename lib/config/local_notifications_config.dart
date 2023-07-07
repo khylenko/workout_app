@@ -42,7 +42,7 @@ class NotificationService {
 
     await flutterLocalNotificationsPlugin.initialize(
       initializationSettings,
-      onDidReceiveNotificationResponse: selectNotification,
+      onDidReceiveNotificationResponse: _selectNotification,
     );
   }
 
@@ -50,7 +50,7 @@ class NotificationService {
     _context = context;
   }
 
-  Future<void> selectNotification(
+  Future<void> _selectNotification(
     NotificationResponse notificationResponse,
   ) async {
     await flutterLocalNotificationsPlugin.cancel(
@@ -97,6 +97,7 @@ class NotificationService {
             channelShowBadge: false,
             importance: Importance.max,
             priority: Priority.high,
+            playSound: false,
             onlyAlertOnce: true,
             showProgress: true,
             maxProgress: maxProgress,
@@ -123,7 +124,7 @@ class NotificationService {
       );
     }
 
-    await cancelAllNotifications();
+    await _cancelAllNotifications();
   }
 
   Future<void> showRestEndNotification() async {
@@ -163,7 +164,7 @@ class NotificationService {
     );
   }
 
-  Future<void> cancelAllNotifications() async {
+  Future<void> _cancelAllNotifications() async {
     await flutterLocalNotificationsPlugin.cancelAll();
   }
 }
