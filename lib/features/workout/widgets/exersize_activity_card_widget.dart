@@ -84,6 +84,10 @@ class _ExersizeActivityCardState extends State<ExersizeActivityCard> {
                               needHideButton: false,
                             );
                           }
+
+                          setState(() {
+                            tempReps = widget.exersize.reps;
+                          });
                           context.read<WorkoutBloc>().add(
                                 WorkoutEvent.updateSet(
                                   createdAt: widget.exersize.createdAt,
