@@ -117,22 +117,26 @@ class BottomSheetManager {
       ),
       SizedBox(
         height: 50,
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.pop(context);
-            context.read<ExportBloc>().add(const ExportEvent.export());
+        child: Builder(
+          builder: (ctx) {
+            return ElevatedButton(
+              onPressed: () {
+                Navigator.pop(ctx);
+                context.read<ExportBloc>().add(const ExportEvent.export());
+              },
+              style: ElevatedButton.styleFrom(
+                foregroundColor: ColorName.white,
+                backgroundColor: ColorName.c7587FF,
+                padding: EdgeInsets.zero,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12),
+                ),
+              ),
+              child: Text(
+                LocaleKeys.export_bottomsheet_button_ok.tr(),
+              ),
+            );
           },
-          style: ElevatedButton.styleFrom(
-            foregroundColor: ColorName.white,
-            backgroundColor: ColorName.c7587FF,
-            padding: EdgeInsets.zero,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(12),
-            ),
-          ),
-          child: Text(
-            LocaleKeys.export_bottomsheet_button_ok.tr(),
-          ),
         ),
       ),
       const SizedBox(
@@ -140,21 +144,25 @@ class BottomSheetManager {
       ),
       SizedBox(
         height: 50,
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.pop(context);
+        child: Builder(
+          builder: (ctx) {
+            return ElevatedButton(
+              onPressed: () {
+                Navigator.pop(ctx);
+              },
+              style: ElevatedButton.styleFrom(
+                foregroundColor: ColorName.white,
+                backgroundColor: ColorName.cBC6083,
+                padding: EdgeInsets.zero,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12),
+                ),
+              ),
+              child: Text(
+                LocaleKeys.export_bottomsheet_button_cancel.tr(),
+              ),
+            );
           },
-          style: ElevatedButton.styleFrom(
-            foregroundColor: ColorName.white,
-            backgroundColor: ColorName.cBC6083,
-            padding: EdgeInsets.zero,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(12),
-            ),
-          ),
-          child: Text(
-            LocaleKeys.export_bottomsheet_button_cancel.tr(),
-          ),
         ),
       ),
     ];
@@ -499,6 +507,11 @@ class BottomSheetManager {
   }) {
     final textTheme = Theme.of(context).textTheme;
     var temp = exersize;
+
+    int activities() {
+      return ((temp.reps + temp.minRepsIncrease) / temp.sets).ceil();
+    }
+
     final body = <Widget>[
       Text(
         LocaleKeys.ex_increase_bottomsheet_title.tr(),
@@ -514,67 +527,81 @@ class BottomSheetManager {
         textAlign: TextAlign.center,
       ),
       const SizedBox(
-        height: 48,
+        height: 16,
       ),
       StatefulBuilder(
         builder: (BuildContext context, StateSetter setState) {
-          return ValueChangeWidget(
-            title: LocaleKeys.sets.tr(),
-            value: temp.sets,
-            callback: (v) {
-              setState(() {
-                temp = temp.copyWith(
-                  sets: v,
-                );
-              });
-            },
-          );
-        },
-      ),
-      const SizedBox(
-        height: 8,
-      ),
-      StatefulBuilder(
-        builder: (BuildContext context, StateSetter setState) {
-          return ValueChangeWidget(
-            title: LocaleKeys.reps.tr(),
-            value: temp.reps,
-            callback: (v) {
-              setState(() {
-                temp = temp.copyWith(
-                  reps: v,
-                );
-              });
-            },
-          );
-        },
-      ),
-      const SizedBox(
-        height: 48,
-      ),
-      SizedBox(
-        height: 50,
-        child: ElevatedButton(
-          onPressed: () {
-            context.read<ExersizeCrudBloc>().add(
-                  ExersizeCrudEvent.save(
-                    exersize: temp,
+          return Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Text(
+                LocaleKeys.ex_increase_bottomsheet_hint.tr().replaceAll(
+                      '{num}',
+                      activities().toString(),
+                    ),
+                style: textTheme.bodyLarge,
+                textAlign: TextAlign.center,
+              ),
+              const SizedBox(
+                height: 32,
+              ),
+              ValueChangeWidget(
+                title: LocaleKeys.sets.tr(),
+                value: temp.sets,
+                callback: (v) {
+                  setState(() {
+                    temp = temp.copyWith(
+                      sets: v,
+                    );
+                  });
+                },
+              ),
+              const SizedBox(
+                height: 8,
+              ),
+              ValueChangeWidget(
+                title: LocaleKeys.reps.tr(),
+                value: temp.reps,
+                callback: (v) {
+                  setState(() {
+                    temp = temp.copyWith(
+                      reps: v,
+                    );
+                  });
+                },
+              ),
+              const SizedBox(
+                height: 48,
+              ),
+              SizedBox(
+                height: 50,
+                child: ElevatedButton(
+                  onPressed: activities() <= temp.reps
+                      ? () {
+                          context.read<ExersizeCrudBloc>().add(
+                                ExersizeCrudEvent.save(
+                                  exersize: temp,
+                                ),
+                              );
+                          Navigator.pop(context);
+                        }
+                      : null,
+                  style: ElevatedButton.styleFrom(
+                    foregroundColor: ColorName.white,
+                    backgroundColor: ColorName.c7587FF,
+                    padding: EdgeInsets.zero,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
                   ),
-                );
-            Navigator.pop(context);
-          },
-          style: ElevatedButton.styleFrom(
-            foregroundColor: ColorName.white,
-            backgroundColor: ColorName.c7587FF,
-            padding: EdgeInsets.zero,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(12),
-            ),
-          ),
-          child: Text(
-            LocaleKeys.ex_increase_bottomsheet_button_ok.tr(),
-          ),
-        ),
+                  child: Text(
+                    LocaleKeys.ex_increase_bottomsheet_button_ok.tr(),
+                  ),
+                ),
+              ),
+            ],
+          );
+        },
       ),
       const SizedBox(
         height: 16,

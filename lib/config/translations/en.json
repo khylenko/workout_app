@@ -54,5 +54,7 @@
 	"import_bottomsheet_button_cancel": "Cancel",
 	"ex_increase_bottomsheet_title": "It's time to increase the load",
 	"ex_increase_bottomsheet_description": "There is a stagnation in your progress. Increase the number of sets or reps.",
-	"ex_increase_bottomsheet_button": "Done"
+	"ex_increase_bottomsheet_hint": "At least {num} reps needed.",
+	"ex_increase_bottomsheet_button_ok": "Done",
+	"ex_increase_bottomsheet_button_cancel": "Cancel"
 }

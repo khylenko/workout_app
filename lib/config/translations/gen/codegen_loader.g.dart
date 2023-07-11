@@ -73,6 +73,7 @@ class CodegenLoader extends AssetLoader{
   "import_bottomsheet_button_cancel": "Отмена",
   "ex_increase_bottomsheet_title": "Пора увеличивать нагрузку",
   "ex_increase_bottomsheet_description": "Наблюдается стагнация в твоём прогрессе. Увеличь количество подходов или повторений.",
+  "ex_increase_bottomsheet_hint": "Нужно минимум {num} повторений.",
   "ex_increase_bottomsheet_button_ok": "Готово",
   "ex_increase_bottomsheet_button_cancel": "Отмена"
 };
@@ -132,7 +133,9 @@ static const Map<String,dynamic> en = {
   "import_bottomsheet_button_cancel": "Cancel",
   "ex_increase_bottomsheet_title": "It's time to increase the load",
   "ex_increase_bottomsheet_description": "There is a stagnation in your progress. Increase the number of sets or reps.",
-  "ex_increase_bottomsheet_button": "Done"
+  "ex_increase_bottomsheet_hint": "At least {num} reps needed.",
+  "ex_increase_bottomsheet_button_ok": "Done",
+  "ex_increase_bottomsheet_button_cancel": "Cancel"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"ru": ru, "en": en};
 }

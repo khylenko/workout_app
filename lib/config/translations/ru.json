@@ -57,6 +57,7 @@
 	"import_bottomsheet_button_cancel": "Отмена",
 	"ex_increase_bottomsheet_title": "Пора увеличивать нагрузку",
 	"ex_increase_bottomsheet_description": "Наблюдается стагнация в твоём прогрессе. Увеличь количество подходов или повторений.",
+	"ex_increase_bottomsheet_hint": "Нужно минимум {num} повторений.",
 	"ex_increase_bottomsheet_button_ok": "Готово",
 	"ex_increase_bottomsheet_button_cancel": "Отмена"
 }

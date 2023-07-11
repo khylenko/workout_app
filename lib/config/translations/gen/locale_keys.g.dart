@@ -59,6 +59,7 @@ abstract class  LocaleKeys {
   static const import_bottomsheet_button_cancel = 'import_bottomsheet_button_cancel';
   static const ex_increase_bottomsheet_title = 'ex_increase_bottomsheet_title';
   static const ex_increase_bottomsheet_description = 'ex_increase_bottomsheet_description';
+  static const ex_increase_bottomsheet_hint = 'ex_increase_bottomsheet_hint';
   static const ex_increase_bottomsheet_button_ok = 'ex_increase_bottomsheet_button_ok';
   static const ex_increase_bottomsheet_button_cancel = 'ex_increase_bottomsheet_button_cancel';
 
