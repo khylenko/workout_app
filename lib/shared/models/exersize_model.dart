@@ -2,6 +2,8 @@
 //
 //     final exersizeModel = exersizeModelFromJson(jsonString);
 
+import 'dart:math';
+
 import 'package:collection/collection.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -98,17 +100,24 @@ class Exersize with _$Exersize {
   }
 
   bool get canIncreaseSetsOrReps {
+    return lastThreeExCompletedRepsSum >= reps * sets;
+  }
+
+  int get lastThreeExCompletedRepsSum {
     final logs = progressLog.reversed.take(3);
     if (logs.length == 3) {
       return logs
-              .map((e) => e.sets)
-              .expand((i) => i)
-              .map((e) => e.completedReps)
-              .average >=
-          reps;
+          .map((e) => e.sets)
+          .expand((i) => i)
+          .map((e) => e.completedReps)
+          .sum;
     } else {
-      return false;
+      return 0;
     }
+  }
+
+  int get minRepsIncrease {
+    return max(1, (reps - lastThreeExCompletedRepsSum).abs() + 1);
   }
 
   Set? get currentSet {
