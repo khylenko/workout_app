@@ -41,6 +41,12 @@ class _HomePageState extends State<HomePage> {
     context.read<ImportBloc>().add(const ImportEvent.load());
   }
 
+  @override
+  void dispose() {
+    NotificationService().restoreDeviceSoundMode();
+    super.dispose();
+  }
+
   void _onReorder(int oldIndex, int newIndex) {
     var newNewIndex = newIndex;
     if (oldIndex < newIndex) {
